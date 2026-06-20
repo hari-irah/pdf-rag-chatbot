@@ -1,0 +1,15 @@
+# deployment/render.yaml (Render.com deployment)
+
+services:
+  - type: web
+    name: pdf-rag-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd backend && gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false  # Set in Render dashboard
+      - key: EMBEDDING_PROVIDER
+        value: local
+      - key: FLASK_ENV
+        value: production

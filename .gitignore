@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+venv/
+.venv/
+
+# Node
+node_modules/
+
+# Models
+models/
+
+# ChromaDB
+backend/vector_db/
+
+# Uploaded PDFs and raw data
+backend/data/
+data/
+
+# Jupyter
+notebooks/
+*.ipynb
+
+# Logs
+*.log
